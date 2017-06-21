@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>登录页面</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+	<div class="box">
+		<form>
+			<div>
+				<label>用户名：</label><input type="text" name="" class="ipt">
+			</div>
+			<div>
+				<label>密码：</label><input type="password" name="" class="ipt">
+			</div>
+			<div>
+				<button type="button">登 录</button>
+			</div>
+		</form>
+		<a href="register.html">注册?</a>
+	</div>
+
+
+<script type="text/javascript" src="../js/data.js"></script>
+<script type="text/javascript">
+	var ipt1 = document.getElementsByTagName('input')[0];
+	var ipt2 = document.getElementsByTagName('input')[1];
+
+	var loginBtn = document.getElementsByTagName('button')[0];
+
+	loginBtn.addEventListener('click', function(){
+		if (ipt1.value.length == 0 || ipt2.value.length == 0) {
+			alert('账号或密码不能为空，请重新输入！');
+			ipt1.value = ipt2.value = "";
+		}else {
+			var userObj = getUserInfo();
+			var users = userObj.users;
+			var flag = false;
+			var idx = 0;
+			var username  = ipt1.value;
+			var userpassword = ipt2.value;
+			
+			users.forEach(function(user, index){
+				if (username == user.username) {
+					flag = true;
+					idx = index;
+				}
+			});
+			
+			if (flag) {
+				var user = users[idx];
+				if ((username == user.username) && (userpassword == user.userpassword)) {
+					alert('恭喜您，登录成功！');
+					// 更新登录状态
+					userObj.loginstate = true;
+					userObj.username = username;
+					saveUserInfo(userObj);
+					window.location.href = "../html/index.html";
+				}else {
+					alert('对不起，账号或密码错误，请重新输入！');
+					ipt1.value = ipt2.value = "";
+				}
+			}else {
+				alert('用户不存在，请重新输入或点击注册！');
+				ipt1.value = ipt2.value = "";
+			}
+
+		}
+	}, false);
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

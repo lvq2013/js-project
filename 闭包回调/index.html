@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包回调 - 模拟数据请求</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+
+
+// 调用封装的数据请求函数，参数可以随便写，这里只是模拟数据请求，重点要放在回调函数
+GET('http://xxx.com', 'get', {}, function(responseObj){
+	var state = responseObj.state;
+	var username = responseObj.username;
+	var password = responseObj.password;
+	document.write(`
+		<p>` + state + `</p>
+		<p><b>账号：</b>` + username + `</p>
+		<p><b>密码：</b>` + password + `</p>`);
+});
+
+// 封装一个数据数据请求函数，当数据请求成功之后通过回调函数将数据返回
+function GET(url, method, param, callBack) {
+	document.write('验证中，请稍后.....');
+
+	// 模拟网络请求耗时
+	setTimeout(function() {
+		// 这里假设数据已经请求成功，并且已经将数据解析成对象
+		var datas = {
+			state: '恭喜您，登录成功！',
+			username: 'Admin', 
+			password: '123456'
+		};
+		// 判断回调函数是否存在，如果存在，则调用回调函数，并将数据返回出去
+		if (callBack) {
+			callBack(datas);
+		}
+	}, 5000);
+}
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

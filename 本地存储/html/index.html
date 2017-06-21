@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>主页</title>
+	<style type="text/css">
+		button {
+			display: block;
+			margin: 30px auto;
+		}
+
+		div {text-align: center; margin: 100px;}
+		div span {font-size: 30px; font-weight: bolder; letter-spacing: 10px; color: blue;}
+	</style>
+</head>
+<body>
+
+<div id="tips"></div>
+
+<script type="text/javascript" src="../js/data.js"></script>
+<script type="text/javascript">
+
+	var div = document.getElementById('tips');
+
+	var userObj = getUserInfo();
+	if (userObj.loginstate == true) {
+		var username = userObj.username;
+
+		var datas = ["欢迎您：", '‘' + username + '’'];
+		datas.forEach(function(item) {
+			var span = document.createElement('span');
+			var text = document.createTextNode(item);
+			span.appendChild(text);
+			div.appendChild(span);
+		});
+		var btn = document.createElement('button');
+		var text = document.createTextNode('退出登录');
+		btn.appendChild(text);
+		div.appendChild(btn);
+
+		btn.onclick = function() {
+
+			var childs = div.childNodes;
+			childs = Array.prototype.slice.call(childs);
+			// 移除所有的子元素
+			childs.forEach(function(child) {
+				child.remove();
+			});
+			var loginBtn = document.createElement('button');
+			loginBtn.appendChild(document.createTextNode('您未登录，点击前往登录？'));
+			loginBtn.setAttribute('type', 'button');
+			
+			loginBtn.onclick = function() {
+				userObj.loginstate = false;
+				saveUserInfo(userObj);
+				
+				window.location.href = "../html/login.html"
+			}
+			div.appendChild(loginBtn);
+		}
+	}else {
+	
+		var btn = document.createElement('button');
+		btn.appendChild(document.createTextNode('您未登录，点击前往登录？'));
+		btn.setAttribute('type', 'button');
+		div.appendChild(btn);	
+		btn.onclick = function() {
+			window.location.href = "../html/login.html"
+		}
+	}
+	
+
+
+</script>
+	
+</body>
+</html>

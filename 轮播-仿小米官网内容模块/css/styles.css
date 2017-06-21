@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(245, 245, 245);
+
+}
+
+.wrap {
+    width: 1240px;
+    height: 400px;
+    margin: 130px auto;
+}
+
+/*外层样式*/
+.content-item {
+    width: 295px;
+    height: 400px;
+    background-color: #fff;
+    margin-right: 20px;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+.content-item:last-child {
+    margin-right: 0;
+}
+.content-item:hover {
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 10px 3px lightgray;
+}
+.content-item:hover .btns .btn {
+    opacity: 1;
+}
+.content-item h3 {
+    text-align: center;
+    font: normal 400 16px/70px "宋体";
+}
+
+
+.content-item .carousel-wrap {
+    width: inherit;
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*内层列表样式*/
+.item-list {
+    height: inherit;
+    position: absolute;
+}
+.item-list li {
+    width: 295px;
+    height: inherit;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.item-list li .title {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+.item-list li .subtitle {
+    display: block;
+    width: 70%;
+    margin:10px auto;
+    color: #b0b0b0;
+    font-size: 12px;
+    line-height: 20px;
+    white-space: pre-wrap;
+}
+
+.item-list li .price {
+    display: inline-block;
+    color: #333;
+    margin: 10px auto;
+    font-size: 12px;
+}
+.item-list li .img {
+    display: block;
+    width: 216px;
+    height: 154px;
+    background-size: cover !important;
+    margin:10px auto;
+}
+
+/*小圆点*/
+.idots {
+    width: inherit;
+    height: 9px;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    display: table;
+}
+
+.idots li {
+    display: table-cell;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    background-color: gray;
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 40%;
+    cursor: pointer;
+}
+
+.idots li.selected {
+    width: 9px;
+    height: 9px;
+    border: 2px solid orange;
+    background-color: white;
+}
+
+/*按钮*/
+.btns .btn {
+    display: block;
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 50px);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+.btns .btn:hover {
+    background-color: gray;
+}
+.btns .prev {
+    left: 0px;
+    background: lightgray url("../imgs/left.png") no-repeat center;
+}
+.btns .next {
+    right: 0px;
+    background: lightgray url("../imgs/right.png") no-repeat center;
+}
+
+
+
+
+
+
+
+
+
+

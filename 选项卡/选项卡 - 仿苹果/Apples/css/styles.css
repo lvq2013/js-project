@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/* style of header */
+
+header {
+	width: 100%;
+	min-width: 1100px;
+	height: 150px;
+	/*background-color: black;*/
+	margin: 20px auto;
+}
+
+nav {
+	width: calc(130px * 7);
+	height: inherit;
+	/*background-color: blue;*/
+	margin: 0 auto;
+}
+
+nav a {
+	display: inline-block;
+	width: 130px;
+	height: inherit;
+	/*background-color: yellowgreen;*/
+	text-align: center;
+	color: black;
+	font-size: 18px;
+	border-bottom: 1px solid lightgray;
+	letter-spacing: 1px;
+}
+
+nav a figure {
+	width: inherit;
+	height: 100px;
+	/*background-color: lightgray;*/
+	background-size: contain !important;
+	transition: all .55s linear;
+}
+
+nav a.selected {
+	border-bottom: 1px solid black;
+}
+
+/* style of contents */
+.contents {
+	width: 100%;
+	min-width: 1100px;
+	height:500px;
+	/*background-color: green;*/
+}
+
+.item {
+	width: inherit;
+	height: inherit;
+	position: relative;
+}
+
+.item img {
+	width: 100px;
+	height: 100px;
+	background-size: contain !important;
+	position: relative;
+	left: -25px;
+}
+
+.item h1 {
+	font-weight: 400;
+}
+
+.item p {
+	line-height: 40px;
+	text-indent: 2em;
+}
+
+.item a {
+	color: #0070c9;
+	font-size: 20px;
+}
+
+.item a:hover {
+	text-decoration: underline;
+}
+
+.fl {
+	width: 55%;
+	height: inherit;
+	/*background-color: red;*/
+	background-size: contain !important;
+	padding: 0 30px;
+}
+
+.fr {
+	width: 45%;
+	height: inherit;
+	/*background-color: orange;*/
+	padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

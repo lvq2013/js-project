@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body, div, ul, li, p, h1, h2, h3, h4, h5, h6, figure {margin: 0; padding: 0;}
+
+
+li {list-style: none;}
+a  {text-decoration: none;}
+*  {box-sizing: border-box;}
+
+.fl {float: left;}
+.fr {float: right;}
+.clearFix:after {content: ''; display: block; height: 0; visibility: hidden; clear: both;}
+
+

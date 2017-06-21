@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* public class */
+
+body, header, div, nav, figure, h1 {margin: 0; padding: 0;}
+* {box-sizing: border-box;}
+
+a {text-decoration: none;}
+
+.fl {float: left;}
+.fr {float: right;}
+.clearFix {overflow: hidden;}

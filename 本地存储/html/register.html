@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+
+<div class="box">
+	<form>
+		<div>
+			<label>用户名：</label><input type="text" name="" class="ipt">
+		</div>
+		<div>
+			<label>密码：</label><input type="password" name="" class="ipt">
+		</div>
+		<div>
+			<label>密码：</label><input type="password" name="" class="ipt">
+		</div>
+		<div>
+			<button type="button">注 册</button>
+		</div>
+	</form>
+</div>
+
+
+<script type="text/javascript" src="../js/data.js"></script>
+<script type="text/javascript">
+
+	var ipt1 = document.getElementsByTagName('input')[0];
+	var ipt2 = document.getElementsByTagName('input')[1];
+	var ipt3 = document.getElementsByTagName('input')[2];
+	var register  = document.getElementsByTagName('button')[0];
+
+	// 注册
+	register.onclick = function() {
+		
+		if (ipt1.value.length == 0 || ipt2.value.length == 0 || ipt3.value.length == 0){
+			alert('请输入完整信息！');
+			ipt1.value = ipt2.value = ipt3.value = "";
+		}else if(ipt2.value != ipt3.value){
+			alert('两次密码输入不一致，请重新输入！');
+			ipt1.value = ipt2.value = ipt3.value = "";
+		}else {
+			var userInfo = {
+				username: ipt1.value,
+				userpassword: ipt2.value
+			}	
+			// 验证用户是否已经存在
+			var userObj = getUserInfo();
+			if (userObj.users.length != 0 ) {
+				// 记录用户是否已经存在
+				var flag = false;
+				userObj.users.forEach(function(user) {
+					if (ipt1.value == user.username) {
+						flag = true;
+					}
+				});
+				if (flag == true) {
+						alert('用户已存在，请重新注册！');
+						ipt1.value = ipt2.value = ipt3.value = "";
+					}else {
+						registerUser(userInfo);
+					}
+			}else {
+				registerUser(userInfo);
+			}
+		}
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

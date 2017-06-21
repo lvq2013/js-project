@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Title</title>
+</head>
+<body class="pos-r">
+<!--头部-->
+<header>
+    <div>通讯录</div>
+</header>
+
+<!--主体-->
+<main>
+    <div class="contact">
+        <ul class="contact-list" id="contact-list">
+            <!--ajax请求加载数据-->
+        </ul>
+    </div>
+</main>
+
+<!--底部-->
+<footer class="pos-a">
+
+</footer>
+
+<!--侧边栏1-->
+<div class="side-page pos-a" id="side-page">
+    <div class="topbar pos-r">
+        <p class="pos-r pos-a">
+            <span class="cancel" id="cancel">取消</span>
+            <span class="span2 pos-a">转账给朋友</span>
+        </p>
+
+    </div>
+    <div class="container">
+        <div class="person pos-r" id="person">
+            <!--加载侧边栏-->
+        </div>
+        <div class="transfer-money">
+            <div class="transfer-list">
+                <p>转账金额</p>
+                <div class="rmb pos-r">
+                    <i class="iconfont icon-rmb rmb1 pos-a"></i><input class="pos-a" type="number" id="ipt-money" size="2em">
+                </div>
+                <p class="explain">添加转账说明</p>
+            </div>
+
+        </div>
+        <div class="btn">
+            <input type="submit" value="转 账" id="ipt">
+        </div>
+    </div>
+    <!--转账框-->
+    <div class="transfer-box pos-a" id="transfer-box">
+        <div class="top pos-r">
+            <div class="back pos-a" id="close">X</div>
+            <div class="text">请输入支付密码</div>
+        </div>
+        <div class="middle">
+            <p class="p1">向 <span class="transfer-sb" id="toWho"></span> 转账</p>
+            <p class="p2"><i class="iconfont icon-rmb rmb2"></i><span class="" id="turn-money"></span></p>
+        </div>
+        <div class="bottom pos-r">
+            <div class="text2"><span>零钱</span></div>
+            <div class="text3 pos-a" id="tips"><span>您输入的密码有误！</span></div>
+            <div class="password">
+                <ul class="clearFix">
+                    <li class="bor-r fl-l"><span class="black-point"></span></li>
+                    <li class="bor-r fl-l"><span class="black-point"></span></li>
+                    <li class="bor-r fl-l"><span class="black-point"></span></li>
+                    <li class="bor-r fl-l"><span class="black-point"></span></li>
+                    <li class="bor-r fl-l"><span class="black-point"></span></li>
+                    <li class="fl-l"><span class="black-point"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--遮罩-->
+    <div class="mask pos-a" id="mask">
+
+    </div>
+
+    <!--键盘-->
+    <div class="keyboard pos-a" id="keyboard">
+        <ul class="clearFix">
+            <li class="fl-l bor-r bor-b">1</li>
+            <li class="fl-l bor-r bor-b">2</li>
+            <li class="fl-l bor-b">3</li>
+            <li class="fl-l bor-r bor-b">4</li>
+            <li class="fl-l bor-r bor-b">5</li>
+            <li class="fl-l bor-b">6</li>
+            <li class="fl-l bor-r bor-b">7</li>
+            <li class="fl-l bor-r bor-b">8</li>
+            <li class="fl-l bor-b">9</li>
+            <li class="fl-l bor-r">.</li>
+            <li class="fl-l bor-r">0</li>
+            <li class="fl-l">X</li>
+        </ul>
+    </div>
+
+
+</div>
+<!--转账成功界面-->
+<div class="success pos-a" id="success">
+    <div class="headbar">
+        <p class="p-icon"><i class="iconfont icon-zhifuchenggong"></i></p>
+        <p class="word">支付成功</p>
+    </div>
+    <div class="mainbar">
+        <p>待 <span id ="toName"> </span> 确认收款</p>
+        <p><span>￥</span><span id="lastMoney"></span></p>
+    </div>
+    <div class="footbar pos-a">
+        <p class="pos-a" id="finish">完成</p>
+    </div>
+</div>
+
+</body>
+
+<script src="js/index.js"></script>
+</html>

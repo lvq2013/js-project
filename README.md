@@ -1,1 +1,1 @@
-some example of js
+一些JS的实例
